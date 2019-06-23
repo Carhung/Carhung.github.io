@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="导入所需包12345import java.sql.Connection;             //用来连接某个数据库import java.sql.DriververManager;       //用来获取数据库连接import java.sql.PreparedStatement;    ">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Java数据库连接示例">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>Java数据库连接示例 - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Java数据库连接示例</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2019-06-23</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/Sql数据库操作/">#Sql数据库操作</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <h5 id="导入所需包"><a href="#导入所需包" class="headerlink" title="导入所需包"></a>导入所需包</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import java.sql.Connection;             //用来连接某个数据库</span><br><span class="line">import java.sql.DriververManager;       //用来获取数据库连接</span><br><span class="line">import java.sql.PreparedStatement;      //用来执行SQL语句</span><br><span class="line">import java.sql.ResultSet;              //封装查询结果集</span><br><span class="line">import java.sql.SQLException;           //异常处理类</span><br></pre></td></tr></table></figure>
+
+<h5 id="声明类属性"><a href="#声明类属性" class="headerlink" title="声明类属性"></a>声明类属性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private Connection con;                 //声明Connection对象</span><br><span class="line">private PreparedStatement pstm;           //声明PreparedStatement对象</span><br><span class="line">private ResultSet rs;                   //声明ResultSet对象</span><br><span class="line">private ResultSetMateData rsmd;         //声明ResultSetMetaData对象</span><br><span class="line">private static String CLASSNAME = &quot;com.mysql.jdbc.Driver&quot;;      //驱动信息,示例mysql</span><br><span class="line">private static String URL = &quot;jdbc:mysql://localhost:3306/&quot;;     //数据库url</span><br><span class="line">private static String USER = &quot;&quot;;        //数据库默认用户名</span><br><span class="line">private static String PASSWORD = &quot;&quot;;    //数据库登录密码</span><br></pre></td></tr></table></figure>
+
+<h5 id="加载驱动"><a href="#加载驱动" class="headerlink" title="加载驱动"></a>加载驱动</h5><p>放在构造方法体内，实例一个DB类的同时就会加载数据库驱动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public DB()&#123;</span><br><span class="line">    //必须放在try-catch内部捕获异常</span><br><span class="line">    try&#123;</span><br><span class="line">        Class.forName(CLASSNAME);       //加载驱动</span><br><span class="line">    &#125;catch(ClassNotFoundExcepion e)&#123;</span><br><span class="line">        System.out.println(&quot;驱动加载出错&quot;);</span><br><span class="line">        e.printStackTrace();            //输出异常信息</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="数据库连接创建"><a href="#数据库连接创建" class="headerlink" title="数据库连接创建"></a>数据库连接创建</h5><p>使用DriverManeger类方法getConnection()获取Connection类实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">private Connection getCon()&#123;</span><br><span class="line">    //放在try-catch中</span><br><span class="line">    try&#123;</span><br><span class="line">        //建立连接,指定数据库url，用户名和密码</span><br><span class="line">        con = DriverManager.getConnection(URL,USER,PASSWORD);</span><br><span class="line">    &#125;catch(SQLException e)&#123;</span><br><span class="line">        System.out.println(&quot;创建数据库连接失败&quot;);</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    return con;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="数据库-增、删、改、查"><a href="#数据库-增、删、改、查" class="headerlink" title="数据库 增、删、改、查"></a>数据库 增、删、改、查</h5><p>我们可以创建一个方法实现所有操作<br><code>public void doPstm(String sql,Object[] params)</code><br>sql为String变量，存储SQL语句，params为Object类型数组，存储SQL语句中为占位符”?”赋值的数据。<br>举栗：<code>SQL = &quot;select * from user where name = ?&quot;</code><br>“?”由PreparedStatement对象使用setXXX()方法进行赋值，<br><code>pstm.setString(1,&quot;username&quot;)</code><br>整数1表示第一个占位符”?”，我们可以在同一SQL语句中多次使用占位符”?”，第二个参数为赋给占位符的值；<br>这样，SQL语句就相当于”select * from user where name = ‘username’”,这样做的好处使得查询变得灵活。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public void doPstm(String sql,Object[] params)&#123;</span><br><span class="line">    if(sql != null &amp;&amp; !sql.equals(&quot;&quot;))&#123;         //语句不为空</span><br><span class="line">        if(params == null)</span><br><span class="line">            params = new Object[0];</span><br><span class="line">        getCon()                                //获取数据库连接</span><br><span class="line">        if(con != null)&#123;</span><br><span class="line">            try&#123;</span><br><span class="line">                pstm = con.preparedStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);    //获取PreparedStatement对象实例，设定游标控制方式：上下移动，并且不能用结果集更新数据库中的表</span><br><span class="line">                for(int i = 0; i &lt; params.length; i++)&#123;//占位符赋值</span><br><span class="line">                    pstm.setObject(i+1,params[i]);</span><br><span class="line">                &#125;</span><br><span class="line">                pstm.execute();                 //执行SQL语句</span><br><span class="line">            &#125;catch(SQLException e)&#123;</span><br><span class="line">                System.out.println(&quot;方法出错&quot;);</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="结果集"><a href="#结果集" class="headerlink" title="结果集"></a>结果集</h5><p>前面处理查询时没有将结果集赋值给ResultSet对象，因为我们不能判断将要执行的是操作是查询、更新、删除还是插入：</p>
+<ul>
+<li>若执行的为查询语句，则返回结果为ResultSet结果集；</li>
+<li>若执行增、删、改，则返回操作影响的记录数。</li>
+</ul>
+<p>获取ResultSet结果集对象的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public ResultSet getRS() throws SQLException&#123;</span><br><span class="line">    //调用PreparedStatement类对象的getResultSet()方法返回ResultSet对象</span><br><span class="line">    return pstm.getResultSet();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>获取影响记录数的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public int getCount()throws SQLException&#123;</span><br><span class="line">    return pstm.getUpdateCount();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样在执行了方法<code>dopstm()</code>之后，选择调用<code>getRS()</code> <code>getCount()</code>即可。</p>
+<h6 id="关于游标"><a href="#关于游标" class="headerlink" title="关于游标"></a>关于游标</h6><p>游标是一种数据缓冲区，用来存放SQL语句执行的结果。<br>数据基础：游标是在先从数据表中检索出数据之后才能继续灵活操作的技术，类似于指针。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Statement stmt = con.createStatement(int type,int concurrency);</span><br><span class="line">或</span><br><span class="line">PreparedStatement pstm = con.preparedStatement(String sql,int type,int concurrency);</span><br></pre></td></tr></table></figure>
+
+<p>这两种对象的实例化都可以通过参数设定游标(concur)的行为动作，当然也可以忽略这两个参数。<br>参数type取值有三种：<br><code>ResultSet.TYPE_FORWORD_ONLY</code>：结果集的游标只能向下滚动<br><code>ResultSet.YTPE_SCROLL_INSENSITIVE</code>：结果集的游标可以上下移动，当数据库变化时结果集不变<br><code>ResultSet.TYPE_SCROLL_SENSITIVE</code>：结果集的游标可以上下移动，当数据库变化时结果集同步改变<br>参数concurrency取值有两种：<br><code>ResultSet.CONCUR_READ_ONLY</code>：不能用结果集更新数据库中的表<br><code>ResultSet.CONCUR_UPDATABLE</code>：能用结果集更新数据库中的表<br>一些游标使用的方法：<br><code>next()</code>：向下移动游标<br><code>previous()</code>：向上移动游标<br><code>beforeFirst()</code>：将游标移动到结果集初始位置，即第一行前，对应的有<code>afterLast()</code>方法<br><code>first()</code>：将游标移动到结果集最后一行，对应的<code>last()</code>方法<br><code>getRow()</code>：获取游标所指行号<br><code>absolute(int row)</code>：将游标移到row指定行<br>还有一些判断方法，例如：<code>isBeforeFirst()</code>,不一一列举</p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Sql数据库操作/">#Sql数据库操作</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2019/06/23/JavaDataBaseConnect/">Java数据库连接示例</a>
+        </p>
+    
+        <p>
+            <a href="/2019/06/23/hello-world/">Hello World</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
